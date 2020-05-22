@@ -61,20 +61,19 @@ public class Ordenamiento{
         int i = inicio;
         int j = tam;
         do{
-            while(arr[i]<pivote)i++;
-            while(arr[j]>pivote)j--;
-            if(i<=j){
+            while(arr[i] < pivote) i++;
+            while(arr[j] > pivote) j--;
+            if(i <= j){
+                if (i < j) intercambios++;
                 int aux = arr[i];
-                arr[i]= arr[j];
+                arr[i] = arr[j];
                 arr[j] = aux; 
-                intercambios++;
                 i++;
                 j--;
-                //System.out.println(i+":"+j);
             }
         }while(i<=j);
         if(inicio<j){
-             intercambios += quickSort(arr, inicio, j);
+            intercambios += quickSort(arr, inicio, j);
         }
         if(i<tam){
             intercambios += quickSort(arr, i, tam);
